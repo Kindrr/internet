@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PortalBoks.pl - Wiadomości Bokserskie</title>
+  <style>
+    /* ===== Reset + Base ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f172a;
+      color: #f1f5f9;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== Container ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* ===== Header ===== */
+    .site-header {
+      background-color: #0f172a;
+      border-bottom: 1px solid #1e293b;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo a {
+      color: #facc15;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .nav-links a {
+      margin-left: 2rem;
+      color: #cbd5e1;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #facc15;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url('background.jpg') center center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-content {
+      text-align: center;
+      max-width: 700px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #facc15;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      margin-bottom: 2rem;
+    }
+    .cta-button {
+      background-color: #facc15;
+      color: #0f172a;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .cta-button:hover {
+      background-color: #eab308;
+    }
+
+    /* ===== Sections ===== */
+    section {
+      padding: 4rem 1rem;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #facc15;
+      margin-bottom: 2rem;
+    }
+
+    .articles-wrapper,
+    .KalendarzGrid,
+    .ranking-list {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      gap: 2rem;
+    }
+
+    /* ===== Placeholders ===== */
+    .placeholder {
+      background-color: #1e293b;
+      border: 1px dashed #334155;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      color: #94a3b8;
+    }
+
+    /* ===== Kalendarz (grid-ready) ===== */
+    .KalendarzGrid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    /* ===== Rankings (list) ===== */
+    .ranking-item {
+      background-color: #0f172a;
+      border: 1px solid #334155;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .rank {
+      font-size: 1.5rem;
+      color: #facc15;
+      width: 50px;
+      text-align: center;
+    }
+
+    /* ===== Responsive Header Nav ===== */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo"><a href="#">PortalBoks.pl</a></div>
+      <nav class="nav-links">
+        <a href="#news">Wiadomości</a>
+        <a href="#kalendarz">Kalendarz</a>
+        <a href="#rankings">Rankingi</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Witaj na PortalBoks</h1>
+        <p>Twoje źródło najnowszych wiadomości ze świata boksu</p>
+        <a href="#news" class="cta-button">Zobacz wiadomości</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS SECTION -->
+  <section id="news">
+    <h2>📣 Najnowsze Wiadomości</h2>
+    <div class="articles-wrapper">
+      <div class="placeholder">📝 Tu będą twoje artykuły – dodaj ręcznie lub dynamicznie</div>
+    </div>
+  </section>
+
+  <!-- FIGHTERS SECTION -->
+  <section id="fighters">
+    <h2>🥊 Kalendarz Wydarzeń</h2>
+    <div class="KalendarzGrid">
+      <div class="placeholder">📸 Tu dodasz sylwetki pięściarzy</div>
+    </div>	
+  </section>
+
+  <!-- RANKINGS SECTION -->
+  <section id="rankings">
+	<h2>Rankingi</h2>
+    <h2>Wybierz kategorię wagową</h2>
+  <div class="weight-categories">
+    <a href="Rankingi/ranking-heavyweight.html" class="weight-btn">Ciężka (od 91kg)</a>
+    <a href="Rankingi/ranking-cruiserweight.html" class="weight-btn">Junior ciężka (79,5-91kg)</a>
+    <a href="Rankingi/ranking-lightheavyweight.html" class="weight-btn">Półciężka (76-79,5kg)</a>
+    <a href="Rankingi/ranking-supermiddleweight.html" class="weight-btn">Super średnia (72,5-76kg)</a>
+    <a href="Rankingi/ranking-middleweight.html" class="weight-btn">Średnia (70-72,5kg)</a>
+	<a href="Rankingi/ranking-superwelterweight.html" class="weight-btn">Super półśrednia (66,5-70kg)</a>
+    <a href="Rankingi/ranking-welterweight.html" class="weight-btn">Półśrednia (63,5-66,5kg)</a>
+	<a href="Rankingi/-juniorwelterweight.html" class="weight-btn">Junior półśrednia (61-63,5kg)</a>
+    <a href="Rankingi/ranking-lightweight.html" class="weight-btn">Lekka (57-61kg)</a>
+    <a href="Rankingi/ranking-featherweight.html" class="weight-btn">Piórkowa (53,5-57g)</a>
+	<a href="Rankingi/ranking-bantamweight.html" class="weight-btn">Kogucia (50-53,5kg)</a>
+	<a href="Rankingi/ranking-flyweight.html" class="weight-btn">Musza (47,5-50kg) </a>
+	<a href="Rankingi/ranking-strawweight.html" class="weight-btn">Słomkowa (do 47,5kg) </a>
+  </div>
+  <h2>Na ten moment prowadzimy jedynie rankingi wagi: ciężkiej, junior ciężkiej, półciężkiej!</h2>
+</section>
+
+  <!-- CONTACT / FOOTER -->
+  <section id="contact">
+    <h2>📬 Kontakt</h2>
+    <div class="placeholder">
+      Tu możesz dodać formularz kontaktowy lub swoje dane redakcyjne.
+    </div>
+  </section>
+
+</body>
+</html>
